@@ -34,26 +34,27 @@ function SuperHeroItem({ hero, avengersAssemble }) {
             <p>Power: {hero.power}</p>
 
             {/* conditionally render the hero's real name */}
-            { !isMasked &&
+            {!isMasked &&
                 <p>Alias: {hero.alias}</p>
             }
 
             {/* conditionally render Duty status */}
-            { onOrOffDuty()}
+            {onOrOffDuty()}
 
             <button onClick={toggleMask}>Toggle Alias</button>
             <button onClick={() => avengersAssemble(hero)}>Assemble!</button>
 
             {/* if true, show the thing */}
-            {/* { this.props.hero.onDuty && <p>ON DUTY</p> } */}
+            {this.props.hero.onDuty && <p>ON DUTY</p>}
 
             {/* if/else show one thing or another */}
-            {/* {
-                    this.props.hero.onDuty ? /* if() */
-                // <p>ON DUTY</p> :         /* true */
-                // <p>SLEEPING</p>          /* false */
-                // }*/}
+
+            {
+                hero.onDuty ?     /* if() */
+                    <p>ON DUTY</p> :    /* true */
+                    <p>SLEEPING</p>     /* false */
             }
+
         </div>
     );
 
